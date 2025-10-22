@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atlas Legal — Trusted Legal Services</title>
+    <meta
+      name="description"
+      content="Professional legal services: corporate, family, real estate, litigation, immigration, wills & estates."
+    />
+    <style>
+      /* --------------------
+       Simple, modern CSS for single-file legal website
+       -------------------- */
+      :root {
+        --accent: #0b5cff;
+        --muted: #6b7280;
+        --bg: #f7f8fb;
+        --card: #ffffff;
+        --radius: 12px;
+        --max-width: 1100px;
+        --gap: 20px;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        color: #0f172a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: var(--bg);
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      header {
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(11, 92, 255, 0.02)
+        );
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+      }
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 28px;
+      }
+
+      /* NAV */
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--accent), #6c7cff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+      }
+      nav ul {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .cta {
+        background: var(--accent);
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .menu-toggle {
+        display: none;
+      }
+
+      /* HERO */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+        padding: 48px 0;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 28px;
+        margin: 0 0 12px;
+      }
+      .hero p {
+        color: var(--muted);
+        margin: 0 0 18px;
+      }
+      .hero .quick-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: var(--radius);
+        box-shadow: 0 8px 30px rgba(16, 24, 40, 0.04);
+      }
+
+      /* SERVICES GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .service {
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(15, 23, 42, 0.04);
+      }
+      .service h4 {
+        margin: 0 0 8px;
+      }
+      .service p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* TWO-COLUMN SECTIONS */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 20px;
+        align-items: start;
+      }
+
+      /* CONTACT */
+      form {
+        display: grid;
+        gap: 12px;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        font-size: 14px;
+      }
+      button {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 0;
+        cursor: pointer;
+      }
+
+      /* FOOTER */
+      footer {
+        padding: 36px 0;
+        color: var(--muted);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 980px) {
+        .hero,
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        nav ul {
+          display: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .container {
+          padding: 18px;
+        }
+      }
+
+      /* small helpers */
+      .muted {
+        color: var(--muted);
+      }
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(11, 92, 255, 0.06);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .kpi {
+        display: flex;
+        gap: 14px;
+      }
+      .kpi div {
+        background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.6));
+        padding: 12px;
+        border-radius: 10px;
+        min-width: 88px;
+        text-align: center;
+      }
+
+      /* Testimonials carousel (simple) */
+      .testimonials {
+        display: flex;
+        overflow: hidden;
+        gap: 12px;
+      }
+      .tcard {
+        min-width: 280px;
+      }
+
+      /* Accessibility focus */
+      :focus {
+        outline: 3px solid rgba(11, 92, 255, 0.12);
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo" aria-hidden>AL</div>
+          <div>
+            <strong>Atlas Legal</strong>
+            <div class="muted" style="font-size: 13px">
+              Trusted legal counsel • Individuals & Businesses
+            </div>
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div style="display: flex; gap: 10px; align-items: center">
+          <a class="cta" href="#book">Book Consultation</a>
+          <button
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" id="home">
+      <section class="hero">
+        <div>
+          <div class="pill">Experienced • Licensed • Responsive</div>
+          <h1>Legal counsel that protects your future and growth.</h1>
+          <p class="muted">
+            We combine practical business sense with strategic legal counsel for
+            individuals and organisations — from incorporation and contracts to
+            litigation and estate planning.
+          </p>
+
+          <div style="display: flex; gap: 12px; margin-top: 18px">
+            <a class="cta" href="#book">Request a consultation</a>
+            <a href="#services">View services</a>
+          </div>
+
+          <div
+            style="
+              margin-top: 24px;
+              display: flex;
+              gap: 14px;
+              align-items: center;
+            "
+          >
+            <div>
+              <div style="font-size: 22px; font-weight: 700">12k+</div>
+              <div class="muted">Cases handled</div>
+            </div>
+            <div>
+              <div style="font-size: 22px; font-weight: 700">98%</div>
+              <div class="muted">Client satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top: 0">Quick Practice Areas</h3>
+          <div class="grid" style="margin-top: 12px">
+            <div class="service">
+              <h4>Corporate Law</h4>
+              <p>
+                Incorporation, contracts, compliance, and commercial disputes.
+              </p>
+            </div>
+            <div class="service">
+              <h4>Family Law</h4>
+              <p>Divorce, custody, separation agreements, mediation.</p>
+            </div>
+            <div class="service">
+              <h4>Real Estate</h4>
+              <p>Property transactions, leases, title disputes.</p>
+            </div>
+            <div class="service">
+              <h4>Litigation</h4>
+              <p>Dispute resolution and courtroom representation.</p>
+            </div>
+            <div class="service">
+              <h4>Immigration</h4>
+              <p>Visas, permits, residency applications.</p>
+            </div>
+            <div class="service">
+              <h4>Wills & Estates</h4>
+              <p>Estate planning, probate, trusts.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" style="margin-top: 28px">
+        <div class="two-col">
+          <div>
+            <h2>About Atlas Legal</h2>
+            <p class="muted">
+              Founded to provide clear, practical legal solutions without the
+              jargon. Our team is focused on outcomes — protecting clients today
+              while preparing them for tomorrow.
+            </p>
+
+            <h3 style="margin-top: 18px">Our Approach</h3>
+            <ul class="muted">
+              <li>Client-first communication: we explain options clearly.</li>
+              <li>
+                Commercial focus: legal solutions aligned with business goals.
+              </li>
+              <li>Transparent fees and timelines.</li>
+            </ul>
+
+            <h3 style="margin-top: 18px">Lead Counsel</h3>
+            <div
+              class="card"
+              style="display: flex; gap: 12px; align-items: center"
+            >
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><rect width='100%' height='100%' rx='14' fill='%230b5cff'/><text x='50%' y='54%' font-size='28' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>FA</text></svg>"
+                alt="Founding Attorney"
+                style="
+                  width: 72px;
+                  height: 72px;
+                  border-radius: 10px;
+                  object-fit: cover;
+                "
+              />
+              <div>
+                <strong>Funlola Taiwo, Esq.</strong>
+                <div class="muted" style="font-size: 13px">
+                  Partner • Commercial & Litigation
+                </div>
+                <div class="muted" style="font-size: 13px; margin-top: 8px">
+                  Bar: 2010 • LLM (International Business Law)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Why clients trust us</h4>
+              <ul class="muted">
+                <li>Clear timelines and milestone updates.</li>
+                <li>Secure client portal for documents.</li>
+                <li>Flexible billing: fixed-fee for many services.</li>
+              </ul>
+              <div style="margin-top: 12px">
+                <a href="#testimonials">Read client stories →</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- SERVICES (expanded) -->
+      <section id="services" style="margin-top: 28px">
+        <h2>Practice Areas</h2>
+        <p class="muted">
+          Detailed, practice area pages build credibility and help clients find
+          what they need. Below is a sample of how to structure each service
+          page.
+        </p>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 12px;
+          "
+        >
+          <div class="card">
+            <h3>Corporate & Commercial</h3>
+            <p class="muted">
+              Company formation, shareholder agreements, mergers & acquisitions,
+              commercial contracts, compliance & regulatory support.
+            </p>
+            <ul class="muted">
+              <li>Startup incorporation & equity structuring</li>
+              <li>Contract drafting & negotiation</li>
+              <li>Corporate governance & compliance audits</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Family Law</h3>
+            <p class="muted">
+              Divorce proceedings, child custody, spousal support, prenuptial
+              agreements, mediation services.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Real Estate</h3>
+            <p class="muted">
+              Sale & purchase agreements, lease drafting, due diligence, title
+              disputes and property litigation.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Wills, Trusts & Estates</h3>
+            <p class="muted">
+              Will drafting, trust setup, probate administration and estate
+              disputes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Callouts for lead generation -->
+        <div
+          style="display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap"
+        >
+          <div class="card" style="flex: 1; min-width: 220px">
+            <h4>Fixed-fee Startup Package</h4>
+            <p class="muted">
+              Company registration, standard shareholder agreement, and 30 days
+              post-incorporation support.
+            </p>
+          </div>
+          <div class="card" style="flex: 1; min-width: 220px">
+            <h4>Family Law Fast Track</h4>
+            <p class="muted">
+              Quick intake and mediation bundle to resolve disputes faster and
+              with less stress.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESOURCES / BLOG -->
+      <section id="resources" style="margin-top: 28px">
+        <h2>Client Resources</h2>
+        <p class="muted">
+          Practical guides, FAQs and templates help clients before they contact
+          you and improve SEO.
+        </p>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+          "
+        >
+          <article class="card">
+            <h4>Guide: How to Register a Business</h4>
+            <p class="muted">
+              Step-by-step checklist for company registration, documents
+              required and timelines.
+            </p>
+          </article>
+          <article class="card">
+            <h4>FAQ: Divorce & Separation</h4>
+            <p class="muted">
+              Common questions answered — costs, timelines, and children’s
+              arrangements.
+            </p>
+          </article>
+          <article class="card">
+            <h4>Template: Simple NDA</h4>
+            <p class="muted">
+              Downloadable non-disclosure agreement template for early-stage
+              talks.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="testimonials" style="margin-top: 28px">
+        <h2>What clients say</h2>
+        <div class="testimonials" id="testiContainer" style="margin-top: 12px">
+          <div class="card tcard">
+            <strong>J. Okoro</strong>
+            <p class="muted">
+              "Atlas Legal helped us incorporate and set up investor protections
+              quickly — clear process and timely responses."
+            </p>
+          </div>
+          <div class="card tcard">
+            <strong>A. Musa</strong>
+            <p class="muted">
+              "Handled a difficult property dispute professionally. Won the case
+              with minimal stress."
+            </p>
+          </div>
+          <div class="card tcard">
+            <strong>S. Bello</strong>
+            <p class="muted">
+              "Compassionate and firm during our family mediation. Recommended."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / BOOK -->
+      <section id="contact" style="margin-top: 28px">
+        <h2>Contact & Book</h2>
+        <div class="two-col">
+          <div class="card">
+            <h3 id="book">Request a Consultation</h3>
+            <form id="contactForm" aria-label="Contact form">
+              <label for="name">Full name</label>
+              <input id="name" name="name" required placeholder="Jane Doe" />
+
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="you@example.com"
+              />
+
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="+234 800 000 0000" />
+
+              <label for="service">Service of interest</label>
+              <select id="service" name="service">
+                <option>Corporate & Commercial</option>
+                <option>Family Law</option>
+                <option>Real Estate</option>
+                <option>Wills & Estates</option>
+                <option>Immigration</option>
+                <option>Other</option>
+              </select>
+
+              <label for="message">Brief description</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Describe your issue briefly"
+              ></textarea>
+
+              <div style="display: flex; gap: 10px; align-items: center">
+                <button
+                  type="submit"
+                  style="background: var(--accent); color: white"
+                >
+                  Send request
+                </button>
+                <button
+                  type="button"
+                  id="clearBtn"
+                  style="
+                    background: transparent;
+                    border: 1px solid rgba(15, 23, 42, 0.06);
+                  "
+                >
+                  Clear
+                </button>
+              </div>
+              <div
+                id="formMsg"
+                aria-live="polite"
+                style="margin-top: 10px; color: var(--muted)"
+              ></div>
+            </form>
+
+            <div style="margin-top: 14px; font-size: 13px" class="muted">
+              <strong>Office</strong><br />
+              12B Kingsway Avenue, Lagos, Nigeria<br />
+              Mon — Fri, 9:00 — 17:00
+            </div>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Secure client portal</h4>
+              <p class="muted">
+                Upload documents, track your matter and receive secure messages.
+              </p>
+              <div style="margin-top: 12px"><a href="#">Client login →</a></div>
+            </div>
+
+            <div class="card" style="margin-top: 12px">
+              <h4>Pricing & Billing</h4>
+              <p class="muted">
+                We offer fixed-fee packages for common matters and hourly rates
+                for complex litigation. Ask us for a tailored quote.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- PRIVACY / TERMS -->
+      <section style="margin-top: 28px">
+        <div class="card">
+          <h3>Privacy & Terms</h3>
+          <p class="muted">
+            We respect client confidentiality. Your data submitted via forms is
+            stored securely and used only to respond to your inquiry. See full
+            policy (link placeholder).
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+          "
+        >
+          <div>
+            <strong>Atlas Legal</strong>
+            <div class="muted">
+              © <span id="year"></span> Atlas Legal — All rights reserved.
+            </div>
+          </div>
+          <div class="muted">Privacy · Terms · Accessibility</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // basic JS: smooth scroll, mobile menu toggle, simple form handling, testimonials carousel
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = a.getAttribute("href");
+          if (target.length > 1) {
+            e.preventDefault();
+            document
+              .querySelector(target)
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Mobile menu (very simple)
+      const toggle = document.querySelector(".menu-toggle");
+      toggle?.addEventListener("click", () => {
+        const nav = document.querySelector("nav ul");
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        if (nav.style.display === "flex") nav.style.display = "none";
+        else nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+      });
+
+      // Contact form — simulate submission (replace with real endpoint)
+      const form = document.getElementById("contactForm");
+      const msg = document.getElementById("formMsg");
+      const clear = document.getElementById("clearBtn");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        // Basic validation
+        if (!data.get("name") || !data.get("email")) {
+          msg.textContent = "Please provide your name and email.";
+          return;
+        }
+        msg.textContent = "Sending...";
+        // Simulate network request
+        setTimeout(() => {
+          msg.textContent =
+            "Thanks — your request has been received. We will contact you within 1 business day.";
+          form.reset();
+        }, 900);
+      });
+      clear.addEventListener("click", () => {
+        form.reset();
+        msg.textContent = "";
+      });
+
+      // Simple testimonials auto-scroll
+      (function carousel() {
+        const cont = document.getElementById("testiContainer");
+        if (!cont) return;
+        let offset = 0;
+        setInterval(() => {
+          offset += 292; // approx card width + gap
+          if (offset > cont.scrollWidth - cont.clientWidth) offset = 0;
+          cont.scrollTo({ left: offset, behavior: "smooth" });
+        }, 3500);
+      })();
+
+      // Accessibility: focus first input when navigating to #book
+      window.addEventListener("hashchange", () => {
+        if (location.hash === "#book") {
+          document.getElementById("name")?.focus();
+        }
+      });
+    </script>
+  </body>
+</html>
