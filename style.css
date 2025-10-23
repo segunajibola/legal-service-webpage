@@ -1,4 +1,7 @@
-*/ :root {
+/* --------------------
+       Simple, modern CSS for single-file legal website
+       -------------------- */
+:root {
   --accent: #0b5cff;
   --muted: #6b7280;
   --bg: #f7f8fb;
@@ -18,13 +21,15 @@ body {
   height: 100%;
   margin: 0;
   background: var(--bg);
+  overflow-x: hidden;
 }
 a {
   color: var(--accent);
   text-decoration: none;
 }
 header {
-  background: linear-gradient(180deg, transparent, rgba(11, 92, 255, 0.02));
+  /* background: linear-gradient(180deg, transparent, rgba(11, 92, 255, 0.02)); */
+  background: #5f646d;
   position: sticky;
   top: 0;
   z-index: 40;
@@ -47,6 +52,7 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
+  color: white;
 }
 .logo {
   width: 44px;

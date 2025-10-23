@@ -8,242 +8,7 @@
       name="description"
       content="Professional legal services: corporate, family, real estate, litigation, immigration, wills & estates."
     />
-    <style>
-      /* --------------------
-       Simple, modern CSS for single-file legal website
-       -------------------- */
-      :root {
-        --accent: #0b5cff;
-        --muted: #6b7280;
-        --bg: #f7f8fb;
-        --card: #ffffff;
-        --radius: 12px;
-        --max-width: 1100px;
-        --gap: 20px;
-        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial;
-        color: #0f172a;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        background: var(--bg);
-      }
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      header {
-        background: linear-gradient(
-          180deg,
-          transparent,
-          rgba(11, 92, 255, 0.02)
-        );
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        border-bottom: 1px solid rgba(15, 23, 42, 0.04);
-      }
-      .container {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: 28px;
-      }
-
-      /* NAV */
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .logo {
-        width: 44px;
-        height: 44px;
-        border-radius: 10px;
-        background: linear-gradient(135deg, var(--accent), #6c7cff);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 700;
-      }
-      nav ul {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-      .cta {
-        background: var(--accent);
-        color: #fff;
-        padding: 10px 14px;
-        border-radius: 10px;
-        font-weight: 600;
-      }
-      .menu-toggle {
-        display: none;
-      }
-
-      /* HERO */
-      .hero {
-        display: grid;
-        grid-template-columns: 1fr 420px;
-        gap: 28px;
-        padding: 48px 0;
-        align-items: center;
-      }
-      .hero h1 {
-        font-size: 28px;
-        margin: 0 0 12px;
-      }
-      .hero p {
-        color: var(--muted);
-        margin: 0 0 18px;
-      }
-      .hero .quick-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .card {
-        background: var(--card);
-        padding: 18px;
-        border-radius: var(--radius);
-        box-shadow: 0 8px 30px rgba(16, 24, 40, 0.04);
-      }
-
-      /* SERVICES GRID */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-      .service {
-        padding: 16px;
-        border-radius: 12px;
-        border: 1px solid rgba(15, 23, 42, 0.04);
-      }
-      .service h4 {
-        margin: 0 0 8px;
-      }
-      .service p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      /* TWO-COLUMN SECTIONS */
-      .two-col {
-        display: grid;
-        grid-template-columns: 1fr 420px;
-        gap: 20px;
-        align-items: start;
-      }
-
-      /* CONTACT */
-      form {
-        display: grid;
-        gap: 12px;
-      }
-      input,
-      textarea,
-      select {
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid rgba(15, 23, 42, 0.06);
-        font-size: 14px;
-      }
-      button {
-        padding: 10px 14px;
-        border-radius: 10px;
-        border: 0;
-        cursor: pointer;
-      }
-
-      /* FOOTER */
-      footer {
-        padding: 36px 0;
-        color: var(--muted);
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 980px) {
-        .hero,
-        .two-col {
-          grid-template-columns: 1fr;
-        }
-        .grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 640px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-        nav ul {
-          display: none;
-        }
-        .menu-toggle {
-          display: block;
-        }
-        .container {
-          padding: 18px;
-        }
-      }
-
-      /* small helpers */
-      .muted {
-        color: var(--muted);
-      }
-      .pill {
-        display: inline-block;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(11, 92, 255, 0.06);
-        color: var(--accent);
-        font-weight: 600;
-      }
-      .kpi {
-        display: flex;
-        gap: 14px;
-      }
-      .kpi div {
-        background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.6));
-        padding: 12px;
-        border-radius: 10px;
-        min-width: 88px;
-        text-align: center;
-      }
-
-      /* Testimonials carousel (simple) */
-      .testimonials {
-        display: flex;
-        overflow: hidden;
-        gap: 12px;
-      }
-      .tcard {
-        min-width: 280px;
-      }
-
-      /* Accessibility focus */
-      :focus {
-        outline: 3px solid rgba(11, 92, 255, 0.12);
-        outline-offset: 3px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -252,9 +17,9 @@
           <div class="logo" aria-hidden>AL</div>
           <div>
             <strong>Atlas Legal</strong>
-            <div class="muted" style="font-size: 13px">
+            <!-- <div class="muted" style="font-size: 13px">
               Trusted legal counsel • Individuals & Businesses
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -322,6 +87,13 @@
           <div class="grid" style="margin-top: 12px">
             <div class="service">
               <h4>Corporate Law</h4>
+              <img
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070"
+                alt=""
+                srcset=""
+                width="90%"
+                height="90%"
+              />
               <p>
                 Incorporation, contracts, compliance, and commercial disputes.
               </p>
@@ -682,78 +454,7 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      // basic JS: smooth scroll, mobile menu toggle, simple form handling, testimonials carousel
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Smooth scroll for internal links
-      document.querySelectorAll('a[href^="#"]').forEach((a) => {
-        a.addEventListener("click", (e) => {
-          const target = a.getAttribute("href");
-          if (target.length > 1) {
-            e.preventDefault();
-            document
-              .querySelector(target)
-              .scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        });
-      });
-
-      // Mobile menu (very simple)
-      const toggle = document.querySelector(".menu-toggle");
-      toggle?.addEventListener("click", () => {
-        const nav = document.querySelector("nav ul");
-        const expanded = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", String(!expanded));
-        if (nav.style.display === "flex") nav.style.display = "none";
-        else nav.style.display = "flex";
-        nav.style.flexDirection = "column";
-      });
-
-      // Contact form — simulate submission (replace with real endpoint)
-      const form = document.getElementById("contactForm");
-      const msg = document.getElementById("formMsg");
-      const clear = document.getElementById("clearBtn");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-        // Basic validation
-        if (!data.get("name") || !data.get("email")) {
-          msg.textContent = "Please provide your name and email.";
-          return;
-        }
-        msg.textContent = "Sending...";
-        // Simulate network request
-        setTimeout(() => {
-          msg.textContent =
-            "Thanks — your request has been received. We will contact you within 1 business day.";
-          form.reset();
-        }, 900);
-      });
-      clear.addEventListener("click", () => {
-        form.reset();
-        msg.textContent = "";
-      });
-
-      // Simple testimonials auto-scroll
-      (function carousel() {
-        const cont = document.getElementById("testiContainer");
-        if (!cont) return;
-        let offset = 0;
-        setInterval(() => {
-          offset += 292; // approx card width + gap
-          if (offset > cont.scrollWidth - cont.clientWidth) offset = 0;
-          cont.scrollTo({ left: offset, behavior: "smooth" });
-        }, 3500);
-      })();
-
-      // Accessibility: focus first input when navigating to #book
-      window.addEventListener("hashchange", () => {
-        if (location.hash === "#book") {
-          document.getElementById("name")?.focus();
-        }
-      });
-    </script>
+    \
+    <script src="script.js"></script>
   </body>
 </html>

@@ -59,7 +59,7 @@ clear.addEventListener("click", () => {
     offset += 292; // approx card width + gap
     if (offset > cont.scrollWidth - cont.clientWidth) offset = 0;
     cont.scrollTo({ left: offset, behavior: "smooth" });
-  }, 3500);
+  }, 2000);
 })();
 
 // Accessibility: focus first input when navigating to #book
