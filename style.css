@@ -168,7 +168,7 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 980px) {
+/* @media (max-width: 980px) {
   .hero,
   .two-col {
     grid-template-columns: 1fr;
@@ -187,6 +187,48 @@ footer {
   .menu-toggle {
     display: block;
   }
+  .container {
+    padding: 18px;
+  }
+} */
+/* Default (desktop) */
+nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 640px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #0b5cff; /* blue background */
+    position: absolute;
+    top: 100%; /* directly under the header */
+    left: 0;
+    width: 100%;
+    padding: 16px 0;
+    text-align: center;
+    z-index: 50;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    color: white; /* make links visible on blue bg */
+    font-weight: 500;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
   .container {
     padding: 18px;
   }

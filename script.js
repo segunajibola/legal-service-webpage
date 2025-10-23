@@ -14,17 +14,30 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
-// Mobile menu (very simple)
+// // Mobile menu (very simple)
+// const toggle = document.querySelector(".menu-toggle");
+// toggle?.addEventListener("click", () => {
+//   const nav = document.querySelector("nav ul");
+//   const expanded = toggle.getAttribute("aria-expanded") === "true";
+//   toggle.setAttribute("aria-expanded", String(!expanded));
+//   if (nav.style.display === "flex") nav.style.display = "none";
+//   else nav.style.display = "flex";
+//   nav.style.flexDirection = "column";
+// });
+// Mobile menu toggle
 const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav ul");
+
 toggle?.addEventListener("click", () => {
-  const nav = document.querySelector("nav ul");
   const expanded = toggle.getAttribute("aria-expanded") === "true";
   toggle.setAttribute("aria-expanded", String(!expanded));
-  if (nav.style.display === "flex") nav.style.display = "none";
-  else nav.style.display = "flex";
-  nav.style.flexDirection = "column";
-});
 
+  if (expanded) {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "flex";
+  }
+});
 // Contact form — simulate submission (replace with real endpoint)
 const form = document.getElementById("contactForm");
 const msg = document.getElementById("formMsg");
