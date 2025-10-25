@@ -117,6 +117,12 @@ nav ul {
   box-shadow: 0 8px 30px rgba(80, 110, 182, 0.04);
 }
 
+.card-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* SERVICES GRID */
 .grid {
   display: grid;
