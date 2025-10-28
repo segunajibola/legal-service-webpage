@@ -24,7 +24,7 @@ body {
   overflow-x: hidden;
 }
 a {
-  color: var(--accent);
+  /* color: var(--accent); */
   text-decoration: none;
 }
 header {
@@ -112,7 +112,7 @@ nav ul {
 }
 .card {
   background: var(--card);
-  padding: 18px;
+  padding: 12px;
   border-radius: var(--radius);
   box-shadow: 0 8px 30px rgba(80, 110, 182, 0.04);
 }
@@ -130,7 +130,7 @@ nav ul {
   gap: 18px;
 }
 .service {
-  padding: 16px;
+  padding: 6px;
   border-radius: 12px;
   border: 2px solid rgba(46, 95, 207, 0.04);
 }
