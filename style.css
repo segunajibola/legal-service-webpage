@@ -117,10 +117,8 @@ nav ul {
   box-shadow: 0 8px 30px rgba(80, 110, 182, 0.04);
 }
 
-.card-article {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card-article p {
+  height: 50px;
 }
 
 /* SERVICES GRID */
@@ -130,18 +128,18 @@ nav ul {
   gap: 18px;
 }
 .service {
-  padding: 6px;
+  padding: 4px;
   border-radius: 12px;
-  border: 2px solid rgba(46, 95, 207, 0.04);
 }
 .service h4 {
   margin: 0 0 8px;
 }
 .service img {
-  width: 90%;
+  width: 100%;
   height: auto;
+  margin: 0 auto;
   border-radius: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
 }
 .service p {
   margin: 0;
