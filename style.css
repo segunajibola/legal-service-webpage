@@ -36,9 +36,7 @@ header {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  /* padding: 10px; */
-  border: 2px solid red;
-  background-color: green;
+  padding: 2px;
 }
 
 /* NAV */
@@ -121,7 +119,7 @@ nav ul {
 
 .card {
   background: var(--card);
-  padding: 12px;
+  padding: 10px;
   border-radius: var(--radius);
   box-shadow: 0 8px 30px rgba(80, 110, 182, 0.04);
 }
@@ -182,9 +180,17 @@ button {
 }
 
 .pre-footer {
-  margin-top: 28px;
-  background: linear-gradient(135deg, var(--accent), #6c7cff);
+    margin-top: 5px;
+  display: grid;
+  gap: 8px;
 }
+
+.prefooter-text {
+    background: var(--card);
+    padding: 12px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(80, 110, 182, 0.04);
+  }
 
 /* FOOTER */
 footer {
@@ -254,12 +260,9 @@ nav ul {
     font-size: 24px;
     cursor: pointer;
   }
-
-  .container {
-    /* padding: 18px; */
-    border: 2px solid blue;
+.container {
+    padding: 12px;
   }
-}
 @media (max-width: 768px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
