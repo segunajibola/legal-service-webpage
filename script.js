@@ -67,11 +67,20 @@ clear.addEventListener("click", () => {
 (function carousel() {
   const cont = document.getElementById("testiContainer");
   if (!cont) return;
-  let offset = 0;
+
+  const cards = cont.querySelectorAll(".tcard");
+  let current = 0;
+
   setInterval(() => {
-    offset += 300; // approx card width + gap
-    if (offset > cont.scrollWidth - cont.clientWidth) offset = 0;
-    cont.scrollTo({ left: offset, behavior: "smooth" });
+    current++;
+    if (current >= cards.length) {
+      current = 0;
+    }
+
+    cont.scrollTo({
+      left: cards[current].offsetLeft,
+      behavior: "smooth",
+    });
   }, 2500);
 })();
 

@@ -294,10 +294,19 @@ nav ul {
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
   gap: 12px;
 }
+.testimonials::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
 .tcard {
-  min-width: 280px;
+  flex: 0 0 300px; /* or width: 100%; for full-width slides */
+  scroll-snap-align: start;
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  margin-right: 10px;
 }
 
 /* Accessibility focus */
