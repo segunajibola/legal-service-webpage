@@ -69,10 +69,10 @@ clear.addEventListener("click", () => {
   if (!cont) return;
   let offset = 0;
   setInterval(() => {
-    offset += 292; // approx card width + gap
+    offset += 300; // approx card width + gap
     if (offset > cont.scrollWidth - cont.clientWidth) offset = 0;
     cont.scrollTo({ left: offset, behavior: "smooth" });
-  }, 2000);
+  }, 2500);
 })();
 
 // Accessibility: focus first input when navigating to #book

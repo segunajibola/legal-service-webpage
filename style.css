@@ -291,7 +291,9 @@ nav ul {
 /* Testimonials carousel (simple) */
 .testimonials {
   display: flex;
-  overflow: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   gap: 12px;
 }
 .tcard {
