@@ -7,7 +7,7 @@
   --bg: #f7f8fb;
   --card: #ffffff;
   --radius: 12px;
-  --max-width: 1100px;
+  --max-width: 95%;
   --gap: 20px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
@@ -24,11 +24,9 @@ body {
   overflow-x: hidden;
 }
 a {
-  /* color: var(--accent); */
   text-decoration: none;
 }
 header {
-  /* background: linear-gradient(180deg, transparent, rgba(11, 92, 255, 0.02)); */
   background: #5f646d;
   position: sticky;
   top: 0;
@@ -38,7 +36,9 @@ header {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 28px;
+  /* padding: 10px; */
+  border: 2px solid red;
+  background-color: green;
 }
 
 /* NAV */
@@ -87,6 +87,7 @@ nav ul {
 
 .menu-toggle {
   display: none;
+  color: white;
 }
 
 /* HERO */
@@ -180,6 +181,11 @@ button {
   cursor: pointer;
 }
 
+.pre-footer {
+  margin-top: 28px;
+  background: linear-gradient(135deg, var(--accent), #6c7cff);
+}
+
 /* FOOTER */
 footer {
   padding: 36px 0;
@@ -207,7 +213,7 @@ footer {
     display: block;
   }
   .container {
-    padding: 18px;
+    /* padding: 18px; */
   }
 }
 
@@ -237,7 +243,7 @@ nav ul {
   }
 
   nav ul li a {
-    color: white; /* make links visible on blue bg */
+    color: white;
     font-weight: 500;
   }
 
@@ -250,7 +256,8 @@ nav ul {
   }
 
   .container {
-    padding: 18px;
+    /* padding: 18px; */
+    border: 2px solid blue;
   }
 }
 @media (max-width: 768px) {
