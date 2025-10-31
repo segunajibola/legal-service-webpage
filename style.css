@@ -274,6 +274,7 @@ nav ul {
     grid-template-columns: 1fr;
   }
 }
+
 /* small helpers */
 .muted {
   color: var(--muted);
