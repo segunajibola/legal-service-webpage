@@ -227,6 +227,7 @@ nav ul {
 }
 
 /* MOBILE VIEW */
+
 @media (max-width: 640px) {
   nav ul {
     display: none;
